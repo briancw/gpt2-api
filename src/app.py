@@ -7,7 +7,7 @@ from flask_cors import CORS, cross_origin
 # Initialize text generation
 ai = aitextgen(
     tf_gpt2="774M",
-    cache_dir="converted",
+    cache_dir="models",
     to_gpu=True,
 )
 

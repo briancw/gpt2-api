@@ -1,1 +1,0 @@
-Either use GPT-2-simple to download models here or copy your own here if you already have them
