@@ -1,2 +1,4 @@
 /models/*/
 input/*.txt
+
+client-example/node_modules
