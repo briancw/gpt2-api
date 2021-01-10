@@ -18,10 +18,3 @@ result = ai.generate_one(
 )
 
 print(result)
-
-#ai.generate(
-#    n=1,
-#    to_gpu=True,
-#    prompt="I believe in unicorns because",
-#    max_length=100,
-#)
