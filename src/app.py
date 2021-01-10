@@ -30,12 +30,11 @@ def get_gen():
         max_length = data['max_length']
 
         # Debug input values
-        print(text, prompt, min_length)
+        print(text, min_length, max_length)
 
         # Generate Text
         result = ai.generate_one(
             to_gpu=True,
-            prompt=text,
             min_length=min_length,
             max_length=max_length,
         )

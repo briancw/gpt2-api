@@ -3,7 +3,7 @@ from pathlib import Path
 
 ai = aitextgen(
     tf_gpt2="124M",
-    cache_dir="converted",
+    cache_dir="models",
     to_gpu=True,
 )
 
