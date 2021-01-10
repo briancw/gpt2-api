@@ -1,4 +1,5 @@
 from aitextgen import aitextgen
+from pathlib import Path
 
 ai = aitextgen(
     tf_gpt2="774M",
