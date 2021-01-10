@@ -2,7 +2,7 @@ from aitextgen import aitextgen
 from pathlib import Path
 
 ai = aitextgen(
-    tf_gpt2="774M",
+    tf_gpt2="124M",
     cache_dir="converted",
     to_gpu=True,
 )

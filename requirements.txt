@@ -1,2 +1,4 @@
 aitextgen
 tensorflow
+flask
+flask_cors
