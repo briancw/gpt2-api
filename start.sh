@@ -4,6 +4,6 @@ docker run \
 --rm \
 -v $PWD/models:/gpt-2-simple/models \
 -v $PWD/input:/gpt-2-simple/input \
--v $PWD/app.py:/gpt-2-simple/app.py \
+-v $PWD/src:/gpt-2-simple/src \
 gpt-2-simple \
 bash
