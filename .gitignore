@@ -1,4 +1,6 @@
 /models/*/
+/models/*.json
+/models/*.bin
 input/*.txt
 
 client-example/node_modules

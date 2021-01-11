@@ -22,19 +22,19 @@ def get_gen():
     data = request.get_json()
 
     # if 'text' not in data or len(data['text']) == 0 or 'model' not in data:
-    if 'text' not in data or 'min_length' not in data or 'max_length' not in data:
+    if 'prompt' not in data or 'min_length' not in data or 'max_length' not in data:
         abort(400)
     else:
-        text = data['text']
+        prompt = data['prompt']
         min_length = data['min_length']
         max_length = data['max_length']
 
         # Debug input values
-        print(text, min_length, max_length)
+        print(prompt, min_length, max_length)
 
         # Generate Text
         result = ai.generate_one(
-            to_gpu=True,
+            prompt=prompt,
             min_length=min_length,
             max_length=max_length,
         )

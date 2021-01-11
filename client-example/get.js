@@ -1,8 +1,11 @@
 const got = require('got')
 
+const apiBaseRoute = 'http://localhost:3000'
+const prompt = `Hello world! `
+
 const generateOptions = {
-    text: 'Hello!',
-    min_length: 10,
+    prompt,
+    min_length: 100,
     max_length: 100,
 }
 
@@ -14,7 +17,7 @@ const options = {
 
 async function go() {
     try {
-        const response = await got('http://192.168.86.85:3000/generate', options)
+        const response = await got(apiBaseRoute + '/generate', options)
         console.log(response.body)
     } catch (error) {
         console.log(error)
