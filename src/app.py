@@ -28,9 +28,11 @@ def get_gen():
         min_length = 10
         max_length = 10
         temperature = 0.7
-        seed = None # Int < 2^32
+        seed = None
         do_sample = True
-        pad_token_id = None # string
+        pad_token_id = None
+        repetition_penalty = 1.0
+        length_penalty = 1.0
 
         if 'min_length' in data:
             min_length = data['min_length']
@@ -44,6 +46,10 @@ def get_gen():
             do_sample = data['do_sample']
         if 'pad_token_id' in data:
             pad_token_id = data['pad_token_id']
+        if 'repetition_penalty' in data:
+            repetition_penalty = data['repetition_penalty']
+        if 'length_penalty' in data:
+            length_penalty = data['length_penalty']
 
         # Debug input values
         print(prompt, min_length, max_length)
@@ -55,8 +61,14 @@ def get_gen():
             max_length = max_length,
             temperature = temperature,
             do_sample = do_sample,
-            seed = seed,
-            pad_token_id = pad_token_id,
+            seed = seed, # Int < 2^32
+            pad_token_id = pad_token_id, # Int
+            
+            # I can't find these in the source code and don't know how they get applied
+            # num_beams = 1,
+            repetition_penalty = repetition_penalty,
+            length_penalty = length_penalty,
+            # no_repeat_ngram_size = 1, # Int
         )
 
         return result

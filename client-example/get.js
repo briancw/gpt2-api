@@ -8,9 +8,11 @@ const generateOptions = {
     min_length: 100,
     max_length: 100,
     temperature: 0.8,
-    // seed: 12398641234,
+    // seed: 398641234,
     // do_sample: true,
     // pad_token_id: 123456,
+    // repetition_penalty: 1.0,
+    // length_penalty: 1.0
 }
 
 const options = {
