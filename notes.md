@@ -43,3 +43,5 @@ as a list. If False, the generated texts will be print to console.
 :param seed: A numeric seed which sets all randomness, allowing the
 generate text to be reproducible if rerunning with same parameters
 and model.
+
+Max seed is 2^32-1 (4,294,967,296)

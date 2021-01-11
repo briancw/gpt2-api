@@ -7,6 +7,10 @@ const generateOptions = {
     prompt,
     min_length: 100,
     max_length: 100,
+    temperature: 0.8,
+    // seed: 12398641234,
+    // do_sample: true,
+    // pad_token_id: 123456,
 }
 
 const options = {

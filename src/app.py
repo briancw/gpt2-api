@@ -21,25 +21,45 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 def get_gen():
     data = request.get_json()
 
-    # if 'text' not in data or len(data['text']) == 0 or 'model' not in data:
-    if 'prompt' not in data or 'min_length' not in data or 'max_length' not in data:
+    if 'prompt' not in data:
         abort(400)
     else:
         prompt = data['prompt']
-        min_length = data['min_length']
-        max_length = data['max_length']
+        min_length = 10
+        max_length = 10
+        temperature = 0.7
+        seed = None # Int < 2^32
+        do_sample = True
+        pad_token_id = None # string
+
+        if 'min_length' in data:
+            min_length = data['min_length']
+        if 'max_length' in data:
+            max_length = data['max_length']
+        if 'temperature' in data:
+            temperature = data['temperature']
+        if 'seed' in data:
+            seed = data['seed']
+        if 'do_sample' in data:
+            do_sample = data['do_sample']
+        if 'pad_token_id' in data:
+            pad_token_id = data['pad_token_id']
 
         # Debug input values
         print(prompt, min_length, max_length)
 
         # Generate Text
         result = ai.generate_one(
-            prompt=prompt,
-            min_length=min_length,
-            max_length=max_length,
+            prompt = prompt,
+            min_length = min_length,
+            max_length = max_length,
+            temperature = temperature,
+            do_sample = do_sample,
+            seed = seed,
+            pad_token_id = pad_token_id,
         )
 
-        return jsonify({result: result})
+        return result
 
 # Simple route for helping test app is running
 @app.route('/')
