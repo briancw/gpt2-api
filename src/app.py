@@ -1,14 +1,23 @@
 from aitextgen import aitextgen
 from pathlib import Path
-
+import sys
+import torch
 from flask import Flask, abort, jsonify, request
 from flask_cors import CORS, cross_origin
+
+# Check if GPU is available
+gpu_available = torch.cuda.is_available()
+
+# Load specific model from command line
+model = "124M"
+if len(sys.argv) == 2:
+    model = sys.argv[1]
 
 # Initialize text generation
 ai = aitextgen(
     tf_gpt2="774M",
     cache_dir="models",
-    to_gpu=True,
+    to_gpu=gpu_available,
 )
 
 # Initialize App

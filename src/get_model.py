@@ -12,6 +12,7 @@ model = sys.argv[1]
 
 # Use to convert GPT2 models in /models to PyTorch
 ai = aitextgen(
+    # model="microsoft/DialoGPT-small",
     tf_gpt2=model,
     cache_dir="models",
     # to_gpu=True,

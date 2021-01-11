@@ -1,6 +1,6 @@
-/models/*/
-/models/*.json
-/models/*.bin
-input/*.txt
+# Keep any .gitkeep files anywhere
+!.gitkeep
 
+/models/*
+input/*.txt
 client-example/node_modules
